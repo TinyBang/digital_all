@@ -24,12 +24,6 @@ class BaseHandler(tornado.web.RequestHandler):
         self.db.close()
 
     def write_back(self, retjson):
-        """
-        写回数据, 如果状态码不为200, 则根据RET_STR的信息重新填写
-         self.set_header('Access-Control-Allow-Origin','*')
-        :param retjson: 
-        :return: 
-        """
 
         self.set_header("Content-Type", "application/json; charset=UTF-8")
         self.write(json.dumps(retjson, ensure_ascii=False, indent=2))

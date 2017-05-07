@@ -29,3 +29,9 @@ class Proj(Base):
     end = Column(DateTime)
     teacher = Column(String(20))
 
+
+
+class User(Base):
+    __tablename__='user'
+    id = Column(Integer, primary_key=True)
+    username=Column(String(20))
