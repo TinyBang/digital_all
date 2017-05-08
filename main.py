@@ -9,7 +9,7 @@ from tornado.options import define, options
 
 from mod.start import StartHandler
 from databases.db import engine
-
+from mod.test import TestHandler
 
 define("port", default=9999, help="run on the given port", type=int)
 
@@ -18,7 +18,8 @@ class Application(tornado.web.Application):
         handlers = [
          #   (r'/', IndexHandler),
             (r'/start', StartHandler),
-            (r'/herald/.*', PageNotFoundHandler)
+            (r'/herald/.*', PageNotFoundHandler),
+            (r'/test',TestHandler)
             ]
         settings = dict(
             cookie_secret='fdsafasdfasd',
