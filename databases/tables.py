@@ -35,3 +35,4 @@ class User(Base):
     __tablename__='user'
     id = Column(Integer, primary_key=True)
     username=Column(String(20))
+    userpassword=Column(String(20))

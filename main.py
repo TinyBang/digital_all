@@ -6,6 +6,7 @@ import tornado.options
 import tornado.web
 from sqlalchemy.orm import scoped_session, sessionmaker
 from tornado.options import define, options
+from mod.signup import SignUpHandler
 
 from mod.start import StartHandler
 from databases.db import engine
@@ -19,7 +20,8 @@ class Application(tornado.web.Application):
          #   (r'/', IndexHandler),
             (r'/start', StartHandler),
             (r'/herald/.*', PageNotFoundHandler),
-            (r'/test',TestHandler)
+            (r'/test',TestHandler),
+            (r'/signup',SignUpHandler)
             ]
         settings = dict(
             cookie_secret='fdsafasdfasd',
