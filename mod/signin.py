@@ -4,34 +4,38 @@ from sqlalchemy.orm.exc import NoResultFound
 import IPython
 
 
-class SignUpHandler(BaseHandler):
+class SignInHandler(BaseHandler):
     def post(self):
         ret_code = {
-            'code':100,'content':'注册成功'
+            'code':200,'content':'ok'
         }
 
         user_name = self.get_argument('username', default='null')
-        #IPython.embed()
-      #  self.db.query(User).limit
         user_password=self.get_argument('userpassword',default='null')
+
+        arr = []
+        arr.append(1)
+        arr.append(2)
+
         if not user_password or not user_password:
-            ret_code['code']=101
+            ret_code['code']=201
             ret_code['content']=u'用户名密码不能为空'
         else:
             try:
                 #IPython.embed()
                 user=self.db.query(User).filter(User.username==user_name).one()
-                if user.username==user_name:
-                    ret_code['code']=102
-                    ret_code['content']=u'用户名已存在'
+                if user.userpassword!=user_password:
+                    ret_code['code']=202
+                    ret_code['content']=u'密码错误'
             except NoResultFound as e:
                 #IPython.embed()
-                newuser=User(username=user_name,userpassword=user_password)
-                self.db.add(newuser)
-                self.db.commit()
+                ret_code['code']=203
+                ret_code['content']=u'账号不存在'
             except:
-                ret_code['code']=104
-                ret_code['content']=u'系统错误，注册失败，请稍后再试'
+                ret_code['code']=204
+                ret_code['content']=u'系统错误，登陆失败，请稍后再试'
+
+       # ret_code['content'] = arr
         self.write_back(ret_code)
         # username=User(username=user_name)
         #  print(self.db.query(User).fliter(User.username==user_name))

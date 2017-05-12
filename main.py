@@ -7,10 +7,10 @@ import tornado.web
 from sqlalchemy.orm import scoped_session, sessionmaker
 from tornado.options import define, options
 from mod.signup import SignUpHandler
+from mod.signin import SignInHandler
 
 from mod.start import StartHandler
 from databases.db import engine
-from mod.test import TestHandler
 
 define("port", default=9999, help="run on the given port", type=int)
 
@@ -20,8 +20,8 @@ class Application(tornado.web.Application):
          #   (r'/', IndexHandler),
             (r'/start', StartHandler),
             (r'/herald/.*', PageNotFoundHandler),
-            (r'/test',TestHandler),
-            (r'/signup',SignUpHandler)
+            (r'/signup',SignUpHandler),
+            (r'/signin',SignInHandler)
             ]
         settings = dict(
             cookie_secret='fdsafasdfasd',
