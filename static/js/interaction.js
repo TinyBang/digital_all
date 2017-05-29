@@ -25,12 +25,14 @@ $.ajax({
 */
 
 $(document).ready(function(){
- //console.log("Hello World!");
+
+ document.getElementById("btn_logout").style.visibility = "hidden";
+
  $("#btn_signIn").click(function(){
  	console.log("hello world!");
-    $.post("/signup",
+    $.post("/signin",
     {
-      username:$('#userName').val(),
+      username:$('#username').val(),
       userpassword:$('#password').val()
     },
     function(data,status){
@@ -40,6 +42,52 @@ $(document).ready(function(){
       document.getElementById("password").style.visibility = "hidden";
       document.getElementById("btn_signIn").style.visibility = "hidden";
       document.getElementById("btn_signUp").style.visibility = "hidden";
+      document.getElementById("btn_logout").style.visibility = "visible";
     });
   });
+});
+
+
+ $("#btn_signUp").click(function(){
+  console.log("hello world!");
+    $.post("/signup",
+    {
+      username:$('#username').val(),
+      userpassword:$('#password').val()
+    },
+    function(data,status){
+      //alert("数据：" + data + "\n状态：" + status);
+      console.log(data+"\n"+status);
+      //$("btn_signIn").css('display','none');
+      document.getElementById("password").style.visibility = "hidden";
+      document.getElementById("btn_signIn").style.visibility = "hidden";
+      document.getElementById("btn_signUp").style.visibility = "hidden";
+      document.getElementById("btn_logout").style.visibility = "visible";
+    });
+});
+
+
+$("#btn_logout").click(function(){
+      console.log("hello world!");
+
+      document.getElementById("username").value ="";
+      document.getElementById("password").value ="";
+      document.getElementById("password").style.visibility = "visible";
+      document.getElementById("btn_signIn").style.visibility = "visible";
+      document.getElementById("btn_signUp").style.visibility = "visible";
+      document.getElementById("btn_logout").style.visibility = "hidden";
+});
+
+
+ $("#btn_search").click(function(){
+  console.log("hello world!");
+    $.post("/search",
+    {
+      search:$('#search').val(),
+    },
+    function(data,status){
+      //alert("数据：" + data + "\n状态：" + status);
+      console.log(data+"\n"+status);
+     
+    });
 });
