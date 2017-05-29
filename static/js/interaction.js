@@ -25,28 +25,21 @@ $.ajax({
 */
 
 $(document).ready(function(){
-
  //console.log("Hello World!");
  $("#btn_signIn").click(function(){
  	console.log("hello world!");
     $.post("/signup",
     {
-      username:"Donald Duck",
-      userpassword:"Duckburg"
+      username:$('#userName').val(),
+      userpassword:$('#password').val()
     },
     function(data,status){
       //alert("数据：" + data + "\n状态：" + status);
-      console.log(data.code+"\n"+status);
-
-
-
+      console.log(data+"\n"+status);
+      //$("btn_signIn").css('display','none');
+      document.getElementById("password").style.visibility = "hidden";
+      document.getElementById("btn_signIn").style.visibility = "hidden";
+      document.getElementById("btn_signUp").style.visibility = "hidden";
     });
   });
-
-  $("#test").click(function(){
- 	console.log("hello world!");
-
-
-  });
-
 });
