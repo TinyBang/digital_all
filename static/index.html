@@ -6,10 +6,16 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1"> 	
 	<!-- <meta http-equiv=""> -->
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../static/styled.css">
 	<script type="text/javascript" src = "js/jquery-3.2.1.min.js"></script>
 	<script type="text/javascript" src = "js/bootstrap.min.js"></script>
+<!-- 	<style type="text/css">
+			.bd{
+				background-image: url('../static/background.jpg');
+			}
+	</style> -->
 </head>
-<body  style="background-image: C:\Users\10176\Documents\GitHub\digital_all\static\background.jpg">
+<body class="bd">
 	<nav class="navbar navbar-inverse navbar-fixed-top">
 		<div class ="container">
 			<!-- <div class="row"> -->
@@ -40,8 +46,7 @@
 								<input type="password" id="password" placeholder="Password" class="form-control">
 							</div>
 							<input type="button" class="btn btn-success" id="btn_signIn" value ="Sign in"/>
-							<input type="button" class="btn btn-info" id="btn_signUp" value ="Sign up"/>
-					</form>
+							<button type="button" class="btn btn-info"><a href="regist.html" style="color: #fff">Sign up</a></button>
 					</div>	
 				</div>
 				<!-- </div> -->
@@ -50,19 +55,19 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-4">
-						<div class="card">
-							<img src="C:\Users\10176\Documents\GitHub\digital_all\static\1.jpg" width="300" height="300">
-							<div class="card-block"><p>手机</p></div>
+						<div class="card" id="c1">
+							<img src="../static/phone.png" width="300" height="300">
+							<!-- <div class="card-block"></div> -->
 						</div>
 					</div>
 					<div class="col-md-4">
-						<div class="card">
-							<img src="C:\Users\10176\Documents\GitHub\digital_all\static\1.jpg" width="300" height="300">
+						<div class="card" id="c2">
+							<img src="../static/computer.png" width="300" height="300">
 						</div>
 					</div>
 					<div class="col-md-4">
-						<div class="card">
-							<img src="C:\Users\10176\Documents\GitHub\digital_all\static\1.jpg" width="300" height="300">
+						<div class="card" id="c3">
+							<img src="../static/camera.png" width="300" height="300">
 						</div>
 					</div>
 				</div>

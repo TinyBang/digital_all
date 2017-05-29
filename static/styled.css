@@ -1,0 +1,11 @@
+		.bd{
+			background-image: url('../static/background.png');
+			/*background-size: cover;*/
+			background-repeat:repeat;
+		}
+
+		.c1{
+			position: relative;
+			left: 20px;
+			top: 20px;
+		}
