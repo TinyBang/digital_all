@@ -1,7 +1,7 @@
 		.bd{
-			background-image: url('../static/background.png');
+			background-image: url('../static/background.jpg');
 			/*background-size: cover;*/
-			background-repeat:repeat;
+			background-repeat:no-repeat;
 		}
 
 		.c1{
