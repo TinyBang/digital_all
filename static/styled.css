@@ -2,10 +2,22 @@
 			background-image: url('../static/background.jpg');
 			/*background-size: cover;*/
 			background-repeat:no-repeat;
+			/*z-index: 1;*/
 		}
 
-		.c1{
-			position: relative;
-			left: 20px;
-			top: 20px;
+		.row{
+			position: absolute;
+			/*left: ;*/
+			/*top: 30%;*/
+			/*z-index: ;*/
+			/*background:#fff;*/
+			bottom: 0%;
 		}
+/*
+		.container{
+			height: 500px;
+			width: 100%;
+			bottom: 0px;
+			position: absolute;*/
+			/*background-color: #fff;
+		}*/

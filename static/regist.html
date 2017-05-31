@@ -9,13 +9,13 @@
 	<script type="text/javascript" src = "js/bootstrap.min.js"></script>
 	<style type="text/css">
 	body{
-		background-image: url('../static/background.png');
+		background-image: url('../static/background.jpg');
 		background-repeat: repeat;
 	}
 	.container{
-		position: relative;
-		top: 100px;
-		left: 0px;
+		position: absolute;
+		top: 20%;
+		left: 10%;
 	}
 	</style>	
 </head>
@@ -23,6 +23,7 @@
 	<!-- <div class="jumbotron"> -->/
 		<div class="container">
 			<h1 style="color: #fff">Welcome to regist at <span style="color: #f99">DigitALL</span>!</h1>
+			<br><br>
 			<form class="form-horizontal">
 				<div class="form-group">
 					<label class="col-sm-2 control-label" style="color: #fff"><span class="glyphicon glyphicon-user"></span>用户名：</label>
@@ -30,12 +31,14 @@
 						<input type="text" placeholder="Username" class="form-control">
 					</div>
 				</div>
+				<!-- <br> -->
 				<div class="form-group">
 					<label class="col-sm-2 control-label" style="color: #fff"><span class="glyphicon glyphicon-lock"></span>密码：</label>
 					<div class="col-sm-3">
 						<input type="password" placeholder="Password" class="form-control">
 					</div>
 				</div>
+				<br>
 				<div class="form-group">
 				<div class="col-sm-offset-2 col-sm-10">
 					<input type="button" class="btn btn-info" id="btn_signUp" value ="Sign up"/>
