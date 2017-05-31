@@ -8,6 +8,10 @@ from sqlalchemy.orm import scoped_session, sessionmaker
 from tornado.options import define, options
 from mod.signup import SignUpHandler
 from mod.signin import SignInHandler
+from mod.getuserinfo import GetUserInfo
+from mod.searchcommodity import SearchCommodityHandler
+from mod.getdata import GetDataHandler
+from mod.addcommodity import AddCommodityHandler
 
 from mod.start import StartHandler
 from databases.db import engine
@@ -21,7 +25,11 @@ class Application(tornado.web.Application):
             (r'/start', StartHandler),
             (r'/herald/.*', PageNotFoundHandler),
             (r'/signup',SignUpHandler),
-            (r'/signin',SignInHandler)
+            (r'/signin',SignInHandler),
+            (r'/getuserinfo',GetUserInfo),
+            (r'/searchcommodity',SearchCommodityHandler),
+            (r'/getdata',GetDataHandler),
+            (r'/addcommodity',AddCommodityHandler)
             ]
         settings = dict(
             cookie_secret='fdsafasdfasd',
