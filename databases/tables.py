@@ -36,3 +36,19 @@ class User(Base):
     id = Column(Integer, primary_key=True)
     username=Column(String(20))
     userpassword=Column(String(20))
+class Commodity(Base):
+    __tablename__='commodity'
+    id=Column(Integer,primary_key=True)
+    name=Column(String(100))
+    sort=Column(Integer)
+    introduce=Column(String(1024))
+    piclink1=Column(String(1024))
+    piclink2=Column(String(1024))
+    piclink3=Column(String(1024))
+    piclink4=Column(String(1024))
+    piclink5=Column(String(1024))
+    piclink6=Column(String(1024))
+    piclink7=Column(String(1024))
+    piclink8=Column(String(1024))
+    piclink9=Column(String(1024))
+

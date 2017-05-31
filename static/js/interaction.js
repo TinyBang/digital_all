@@ -24,10 +24,6 @@ $.ajax({
 });
 */
 
-$(document).ready(function(){
-
- document.getElementById("btn_logout").style.visibility = "hidden";
-
  $("#btn_signIn").click(function(){
  	console.log("hello world!");
     $.post("/signin",
@@ -41,28 +37,27 @@ $(document).ready(function(){
       //$("btn_signIn").css('display','none');
       document.getElementById("password").style.visibility = "hidden";
       document.getElementById("btn_signIn").style.visibility = "hidden";
-      document.getElementById("btn_signUp").style.visibility = "hidden";
+      document.getElementById("index_signUp").style.visibility = "hidden";
       document.getElementById("btn_logout").style.visibility = "visible";
     });
   });
-});
 
 
  $("#btn_signUp").click(function(){
   console.log("hello world!");
     $.post("/signup",
     {
-      username:$('#username').val(),
-      userpassword:$('#password').val()
+      username:$('#rusername').val(),
+      userpassword:$('#rpassword').val()
     },
     function(data,status){
       //alert("数据：" + data + "\n状态：" + status);
       console.log(data+"\n"+status);
       //$("btn_signIn").css('display','none');
-      document.getElementById("password").style.visibility = "hidden";
-      document.getElementById("btn_signIn").style.visibility = "hidden";
-      document.getElementById("btn_signUp").style.visibility = "hidden";
-      document.getElementById("btn_logout").style.visibility = "visible";
+      alert("注册成功！\n返回主页！")
+      window.location.href ="index.html";
+     
+      console.log("hi");
     });
 });
 
@@ -74,7 +69,7 @@ $("#btn_logout").click(function(){
       document.getElementById("password").value ="";
       document.getElementById("password").style.visibility = "visible";
       document.getElementById("btn_signIn").style.visibility = "visible";
-      document.getElementById("btn_signUp").style.visibility = "visible";
+      document.getElementById("index_signUp").style.visibility = "visible";
       document.getElementById("btn_logout").style.visibility = "hidden";
 });
 

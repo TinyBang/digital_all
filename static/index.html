@@ -46,14 +46,17 @@
 								<input type="password" id="password" placeholder="Password" class="form-control">
 							</div>
 							<input type="button" class="btn btn-success" id="btn_signIn" value ="Sign in"/>
-							<button type="button" class="btn btn-info"><a href="regist.html" style="color: #fff">Sign up</a></button>
+							<button type="button" id ="index_signUp" class="btn btn-info"><a href="regist.html" style="color: #fff">Sign up</a></button>
 							<input type="button" class="btn btn-info" id="btn_logout" value ="Logout"/>
+
 					</form>
 					</div>	
 				</div>
 				<!-- </div> -->
 			</nav>
-
+				<script >
+					document.getElementById("btn_logout").style.visibility ="hidden";
+				</script>
 			<div class="container">
 				<div class="row" id="row1">
 					<div class="col-md-4">
@@ -75,7 +78,7 @@
 				</div>
 			</div>
 		</body>
-
+				
 			<script type="text/javascript" src = "js/interaction.js"></script>
 
 		</html>

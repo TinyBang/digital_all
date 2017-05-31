@@ -7,6 +7,7 @@
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<script type="text/javascript" src = "js/jquery-3.2.1.min.js"></script>
 	<script type="text/javascript" src = "js/bootstrap.min.js"></script>
+
 	<style type="text/css">
 	body{
 		background-image: url('../static/background.jpg');
@@ -27,15 +28,15 @@
 			<form class="form-horizontal">
 				<div class="form-group">
 					<label class="col-sm-2 control-label" style="color: #fff"><span class="glyphicon glyphicon-user"></span>用户名：</label>
-					<div class="col-sm-3">
-						<input type="text" placeholder="Username" class="form-control">
+					<div class="col-sm-3"> 
+						<input type="text" id ="rusername" placeholder="Username" class="form-control">
 					</div>
 				</div>
 				<!-- <br> -->
 				<div class="form-group">
 					<label class="col-sm-2 control-label" style="color: #fff"><span class="glyphicon glyphicon-lock"></span>密码：</label>
 					<div class="col-sm-3">
-						<input type="password" placeholder="Password" class="form-control">
+						<input type="password" id ="rpassword" placeholder="Password" class="form-control">
 					</div>
 				</div>
 				<br>
@@ -47,5 +48,7 @@
 			</form>
 		</div>
 	<!-- </div> -->
+
 </body>
+	<script type="text/javascript" src = "js/interaction.js"></script>
 </html>
