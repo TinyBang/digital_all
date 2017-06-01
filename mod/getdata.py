@@ -23,34 +23,35 @@ class GetDataHandler(BaseHandler):
             allresult = []
             for item in self.db.query(Commodity).filter(Commodity.sort == commoditysort):
                 ret_code['code']=100
-                result = []
+                result = {
+                }
 
                 piclink = []
 
-                result.append('id:' + str(item.id))
+                result['id']=str(item.id)
 
-                result.append('name:' + item.name)
-
-                result.append('intro:' + item.introduce)
-                if not item.piclink1 == 'null':
+                result['name'] = item.name
+                result['sort']=str(item.sort)
+                result['intro' ]= item.introduce
+                if not item.piclink1==None:
                     piclink.append(item.piclink1)
-                if not item.piclink2 == 'null':
+                if not item.piclink2 == None:
                     piclink.append(item.piclink2)
-                if not item.piclink3 == 'null':
+                if not item.piclink3 == None:
                     piclink.append(item.piclink3)
-                if not item.piclink4 == 'null':
+                if not item.piclink4 == None:
                     piclink.append(item.piclink4)
-                if not item.piclink5 == 'null':
+                if not item.piclink5 == None:
                     piclink.append(item.piclink5)
-                if not item.piclink6 == 'null':
+                if not item.piclink6 == None:
                     piclink.append(item.piclink6)
-                if not item.piclink7 == 'null':
+                if not item.piclink7 == None:
                     piclink.append(item.piclink7)
-                if not item.piclink8 == 'null':
+                if not item.piclink8 == None:
                     piclink.append(item.piclink8)
-                if not item.piclink9 == 'null':
+                if not item.piclink9 == None:
                     piclink.append(item.piclink9)
-                result.append(piclink)
+                result['piclinks']=piclink
                 allresult.append(result)
                 # arrcommodityid.append(item.id)
                 # arrcommodityname.append(item.id)
