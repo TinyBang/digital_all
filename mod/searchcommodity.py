@@ -15,7 +15,7 @@ class SearchCommodityHandler(BaseHandler):
         try:
 
             allresult=[]
-            for item in self.db.query(Commodity).filter(Commodity.name==item_name):
+            for item in self.db.query(Commodity).filter(Commodity.name.like('%'+item_name+'%')):
                 ret_code['code']=100
                 result = {
                 }
