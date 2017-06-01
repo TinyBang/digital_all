@@ -17,16 +17,17 @@ class SearchCommodityHandler(BaseHandler):
             allresult=[]
             for item in self.db.query(Commodity).filter(Commodity.name==item_name):
                 ret_code['code']=100
-                result=[]
+                result = {
+                }
 
-                piclink=[]
+                piclink = []
 
-                result.append('id:'+str(item.id))
+                result['id'] = str(item.id)
 
-                result.append('name:'+item.name)
-                result.append('sort:'+str(item.sort))
-                result.append('intro:'+item.introduce)
-                if not item.piclink1==None:
+                result['name:'] = item.name
+                result['sort:'] = str(item.sort)
+                result['intro:'] = item.introduce
+                if not item.piclink1 == None:
                     piclink.append(item.piclink1)
                 if not item.piclink2 == None:
                     piclink.append(item.piclink2)
@@ -44,7 +45,7 @@ class SearchCommodityHandler(BaseHandler):
                     piclink.append(item.piclink8)
                 if not item.piclink9 == None:
                     piclink.append(item.piclink9)
-                result.append('piclinks:'+str(piclink))
+                result['piclinks:'] = piclink
                 allresult.append(result)
                 #arrcommodityid.append(item.id)
                 #arrcommodityname.append(item.id)
