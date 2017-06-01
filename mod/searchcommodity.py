@@ -13,13 +13,7 @@ class SearchCommodityHandler(BaseHandler):
             'content':''
         }
         try:
-            #IPython.embed()
-            #items=self.db.query(Commodity).filter(Commodity.name==item_name).all()
-            #IPython.embed()
-            arrcommodityid=[]
-            arrcommodityname=[]
-            arrcommoditysort=[]
-            arrcommodityintro = []
+
             allresult=[]
             for item in self.db.query(Commodity).filter(Commodity.name==item_name):
                 ret_code['code']=100
@@ -30,27 +24,27 @@ class SearchCommodityHandler(BaseHandler):
                 result.append('id:'+str(item.id))
 
                 result.append('name:'+item.name)
-
+                result.append('sort:'+str(item.sort))
                 result.append('intro:'+item.introduce)
-                if not item.piclink1=='null':
+                if not item.piclink1==None:
                     piclink.append(item.piclink1)
-                if not item.piclink2 == 'null':
+                if not item.piclink2 == None:
                     piclink.append(item.piclink2)
-                if not item.piclink3 == 'null':
+                if not item.piclink3 == None:
                     piclink.append(item.piclink3)
-                if not item.piclink4 == 'null':
+                if not item.piclink4 == None:
                     piclink.append(item.piclink4)
-                if not item.piclink5 == 'null':
+                if not item.piclink5 == None:
                     piclink.append(item.piclink5)
-                if not item.piclink6 == 'null':
+                if not item.piclink6 == None:
                     piclink.append(item.piclink6)
-                if not item.piclink7 == 'null':
+                if not item.piclink7 == None:
                     piclink.append(item.piclink7)
-                if not item.piclink8 == 'null':
+                if not item.piclink8 == None:
                     piclink.append(item.piclink8)
-                if not item.piclink9 == 'null':
+                if not item.piclink9 == None:
                     piclink.append(item.piclink9)
-                result.append(piclink)
+                result.append('piclinks:'+str(piclink))
                 allresult.append(result)
                 #arrcommodityid.append(item.id)
                 #arrcommodityname.append(item.id)
