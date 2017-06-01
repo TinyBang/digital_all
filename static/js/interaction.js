@@ -33,12 +33,16 @@ $.ajax({
     },
     function(data,status){
       //alert("数据：" + data + "\n状态：" + status);
-      console.log(data+"\n"+status);
-      //$("btn_signIn").css('display','none');
+      if(data.code==100){
       document.getElementById("password").style.visibility = "hidden";
       document.getElementById("btn_signIn").style.visibility = "hidden";
       document.getElementById("index_signUp").style.visibility = "hidden";
       document.getElementById("btn_logout").style.visibility = "visible";
+    }else{
+      alert(data.content);
+      document.getElementById("username").value ="";
+      document.getElementById("password").value ="";
+     }
     });
   });
 
@@ -52,19 +56,19 @@ $.ajax({
     },
     function(data,status){
       //alert("数据：" + data + "\n状态：" + status);
-      console.log(data+"\n"+status);
-      //$("btn_signIn").css('display','none');
-      alert("注册成功！\n返回主页！")
-      window.location.href ="index.html";
+      if(data.code==100){
+      alert(data.content);
+      window.location.reload ="index.html";
+
+    }else alert(data.content);
+      
      
-      console.log("hi");
     });
 });
 
 
 $("#btn_logout").click(function(){
       console.log("hello world!");
-
       document.getElementById("username").value ="";
       document.getElementById("password").value ="";
       document.getElementById("password").style.visibility = "visible";
@@ -73,16 +77,80 @@ $("#btn_logout").click(function(){
       document.getElementById("btn_logout").style.visibility = "hidden";
 });
 
+$("#btn_back").click(function(){
+      console.log("hello world!");
+      window.location.href ="index.html";
+});
+
+
 
  $("#btn_search").click(function(){
   console.log("hello world!");
-    $.post("/search",
+    $.post("/searchcommodity",
     {
-      search:$('#search').val(),
+      searchitem:$('#search').val(),
     },
     function(data,status){
-      //alert("数据：" + data + "\n状态：" + status);
-      console.log(data+"\n"+status);
+      console.log(data.content[0]);
+      if(data.code==100)
+      {
+console.log(data);
+        document.getElementById("search").value =data.content[0].id;
+      }
+      else{
+        alert("查询失败！\n无此商品！");
+        document.getElementById("search").value ="";
+      }
      
     });
 });
+
+function init(sort){ 
+  // if(document.title=="phone display"){
+    console.log("111111");
+  
+   $.post("/getdata",
+    {
+      sort:sort,
+    },
+    function(data,status){
+      if(data.code==100)
+      {
+        if(data.content[0].sort==0){
+        console.log(data);
+        var i=1;
+        var j="";
+        for(j in data.content){
+        document.getElementById("img_p"+i).src = data.content[j].piclinks[0];
+        document.getElementById("phone"+i).innerHTML = data.content[j].name;
+        i++;
+          }
+        } 
+         if(data.content[0].sort==1){
+        console.log(data);
+        var i=1;
+        var j="";
+        for(j in data.content){
+        document.getElementById("img_pc"+i).src = data.content[j].piclinks[0];
+        document.getElementById("computer"+i).innerHTML = data.content[j].name;
+        i++;
+          }
+        } 
+         if(data.content[0].sort==2){
+        console.log(data);
+        var i=1;
+        var j="";
+        for(j in data.content){
+        document.getElementById("img_c"+i).src = data.content[j].piclinks[0];
+        document.getElementById("camera"+i).innerHTML = data.content[j].name;
+        i++;
+          }
+        } 
+      }
+      else{
+        alert("查询失败！\n无此商品！");
+      }
+     
+    });
+ // }
+}
