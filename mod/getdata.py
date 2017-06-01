@@ -30,9 +30,9 @@ class GetDataHandler(BaseHandler):
 
                 result['id']=str(item.id)
 
-                result['name:'] = item.name
-                result['sort:']=str(item.sort)
-                result['intro:' ]= item.introduce
+                result['name'] = item.name
+                result['sort']=str(item.sort)
+                result['intro' ]= item.introduce
                 if not item.piclink1==None:
                     piclink.append(item.piclink1)
                 if not item.piclink2 == None:
@@ -51,7 +51,7 @@ class GetDataHandler(BaseHandler):
                     piclink.append(item.piclink8)
                 if not item.piclink9 == None:
                     piclink.append(item.piclink9)
-                result['piclinks:']=piclink
+                result['piclinks']=piclink
                 allresult.append(result)
                 # arrcommodityid.append(item.id)
                 # arrcommodityname.append(item.id)
