@@ -12,7 +12,7 @@ from mod.getuserinfo import GetUserInfo
 from mod.searchcommodity import SearchCommodityHandler
 from mod.getdata import GetDataHandler
 from mod.addcommodity import AddCommodityHandler
-
+from mod.getcommoditybyid import GetCommodityById
 from mod.start import StartHandler
 from databases.db import engine
 
@@ -29,7 +29,8 @@ class Application(tornado.web.Application):
             (r'/getuserinfo',GetUserInfo),
             (r'/searchcommodity',SearchCommodityHandler),
             (r'/getdata',GetDataHandler),
-            (r'/addcommodity',AddCommodityHandler)
+            (r'/addcommodity',AddCommodityHandler),
+            (r'/searchbyid',GetCommodityById)
             ]
         settings = dict(
             cookie_secret='fdsafasdfasd',
