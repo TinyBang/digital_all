@@ -14,9 +14,11 @@
   <script type="text/javascript" src="js/jquery.prettyPhoto.js"></script>
   <script type="text/javascript" src="js/scripts.js"></script>
 </head>
-<body>
+<body onload="details()">
+
   <!-- Header Wrapper -->
-  <br><br><br><br><br><br>
+  <br><a class="navbar-brand" href="index.html" style="font-size:36px; color:#f99">Digit All</a><br><br>
+
   <div id="header-wrapper"> 
     <!-- Header -->
     <div id="header"> 
@@ -27,22 +29,22 @@
         <!-- Slide -->
         
         <div class="slide">
-          <div class="media"><img src="images/slide1.jpg" alt="" width="650" height="360" /></div>
+          <div class="media"><img id="img_d1" src="images/slide1.jpg" alt="" width="650" height="360" /></div>
           <div class="text">
           <br>
-            <h2>Welcome to MeegoFurn.</h2>
-            <p>Morbi sed lectus nibh ut velest elit. Curabitur at mauris at velit laoreet sedat odio. Nam ut biben sagittis tortora volutpat. Etiam nonet leo purus,elementum libero. Aenean vitae quam leo mure rutrum.</p>
+            <h2 id="details1">Welcome to MeegoFurn.</h2>
+            <p id="intro1">Morbi sed lectus nibh ut velest elit. Curabitur at mauris at velit laoreet sedat odio. Nam ut biben sagittis tortora volutpat. Etiam nonet leo purus,elementum libero. Aenean vitae quam leo mure rutrum.</p>
             <a href="#" class="button">Go to Link<span></span></a> </div>
           </div>
           <!-- End Slide --> 
           
           <!-- Slide -->
           <div class="slide">
-            <div class="media"><img src="images/slide2.jpg" alt="" width="650" height="360" /></div>
+            <div class="media"><img id="img_d2" src="images/slide2.jpg" alt="" width="650" height="360" /></div>
             <div class="text">
             <br>
-              <h2>Vestibulum euismod ornare</h2>
-              <p>Duis gravida molestie urna, non convallis lectus malesuada vel. Vestibulum euismod ornare purus sit amet bibendum. Phasellus non turpis sit amet urna molestie pellentesque. </p>
+              <h2 id="details2">Vestibulum euismod ornare</h2>
+              <p id="intro2">Duis gravida molestie urna, non convallis lectus malesuada vel. Vestibulum euismod ornare purus sit amet bibendum. Phasellus non turpis sit amet urna molestie pellentesque. </p>
            
               <a href="#" class="button">Go to Link<span></span></a> </div>
             </div>
@@ -50,11 +52,11 @@
             
             <!-- Slide -->
             <div class="slide">
-              <div class="media"><img src="images/slide2.jpg" alt="" width="650" height="360" /></div>
+              <div class="media"><img id="img_d3" src="images/slide2.jpg" alt="" width="650" height="360" /></div>
               <div class="text">
               <br>
-                <h2>Vestibulum euismod ornare</h2>
-                <p>Duis gravida molestie urna, non convallis lectus malesuada vel. Vestibulum euismod ornare purus sit amet bibendum. Phasellus non turpis sit amet urna molestie pellentesque. </p>
+                <h2 id="details3">Vestibulum euismod ornare</h2>
+                <p id="intro3">Duis gravida molestie urna, non convallis lectus malesuada vel. Vestibulum euismod ornare purus sit amet bibendum. Phasellus non turpis sit amet urna molestie pellentesque. </p>
              
                 <a href="#" class="button">Go to Link<span></span></a> </div>
               </div>
@@ -62,11 +64,11 @@
               
               <!-- Slide -->
               <div class="slide">
-                <div class="media"><img src="images/slide3.jpg" alt="" width="650" height="360" /></div>
+                <div class="media"><img id="img_d4" src="images/slide3.jpg" alt="" width="650" height="360" /></div>
                 <div class="text">
                 <br>
-                  <h2>Etiam nonet leo purus</h2>
-                  <p>Morbi sed lectus nibh ut velest elit. Curabitur at mauris at velit laoreet sedat odio. Nam ut biben sagittis tortora volutpat. Etiam nonet leo purus, elementum libero. Aenean vitae quam leo mure rutrum.</p>
+                  <h2 id="details4">Etiam nonet leo purus</h2>
+                  <p id="intro4">Morbi sed lectus nibh ut velest elit. Curabitur at mauris at velit laoreet sedat odio. Nam ut biben sagittis tortora volutpat. Etiam nonet leo purus, elementum libero. Aenean vitae quam leo mure rutrum.</p>
                 
                   <a href="#" class="button">Go to Link<span></span></a> </div>
                 </div>
@@ -85,4 +87,5 @@
           <!-- End Header Wrapper --> 
 
         </body>
+            <script type="text/javascript" src = "js/interaction.js"></script>
         </html>

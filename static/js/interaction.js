@@ -38,8 +38,8 @@ $.ajax({
       document.getElementById("btn_logout").style.visibility = "visible";
     }else{
       // alert(data.content);
-      document.getElementById("username").value ="";
-      document.getElementById("password").value ="";
+      // document.getElementById("username").value ="";
+      // document.getElementById("password").value ="";
      }
     });
   });
@@ -115,7 +115,7 @@ $("#btn_back").click(function(){
       if(data.code==100)
       {
         console.log(data);
-        document.getElementById("search").value =data.content[0].intro;
+        window.location.href ="work-template.html"+ "?id="+data.content[0].id;
       }
       else{
         alert("查询失败！\n无此商品！");
@@ -143,6 +143,7 @@ function init(sort){
         for(j in data.content){
         document.getElementById("img_p"+i).src = data.content[j].piclinks[0];
         document.getElementById("phone"+i).innerHTML = data.content[j].name;
+        document.getElementById("href_p"+i).href +="?id=" + data.content[j].id;
         i++;
           }
         } 
@@ -153,6 +154,7 @@ function init(sort){
         for(j in data.content){
         document.getElementById("img_pc"+i).src = data.content[j].piclinks[0];
         document.getElementById("computer"+i).innerHTML = data.content[j].name;
+         document.getElementById("href_pc"+i).href +="?id=" + data.content[j].id;
         i++;
           }
         } 
@@ -163,6 +165,7 @@ function init(sort){
         for(j in data.content){
         document.getElementById("img_c"+i).src = data.content[j].piclinks[0];
         document.getElementById("camera"+i).innerHTML = data.content[j].name;
+         document.getElementById("href_c"+i).href +="?id=" + data.content[j].id;
         i++;
           }
         } 
@@ -173,4 +176,41 @@ function init(sort){
      
     });
  // }
+}
+
+function details(){ 
+  // if(document.title=="phone display"){
+    console.log("22222");
+  
+   $.post("/searchbyid",
+    {
+      id:GetQueryString('id'),
+    },
+    function(data,status){
+      if(data.code==100)
+      {
+        
+        console.log(data);
+        var i=1;
+        var j=0;
+        while(j <4){
+        document.getElementById("img_d"+i).src = data.content[0].piclinks[j];
+        document.getElementById("details"+i).innerHTML = data.content[0].name;
+        document.getElementById("intro"+i).innerHTML = data.content[0].intro;
+        i++;j++;
+          }
+      }
+      else{
+        alert("尚无详细信息！");
+      }
+     
+    });
+ // }
+}
+
+function GetQueryString(name)
+{
+     var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+     var r = window.location.search.substr(1).match(reg);
+     if(r!=null)return  unescape(r[2]); return null;
 }
