@@ -23,6 +23,26 @@ $.ajax({
     'dataType':'json',//传递的数据类型，对应我上面的数据格式，这里用json。数据类型也可以是html/xml等
 });
 */
+ $("document").ready(function(){
+  console.log("hello world!");
+    $.post("/start",
+    {
+    },
+    function(data,status){
+      //alert("数据：" + data + "\n状态：" + status);
+      if(data.code==100){
+      document.getElementById("username").value =data.content;
+      document.getElementById("password").style.visibility = "hidden";
+      document.getElementById("btn_signIn").style.visibility = "hidden";
+      document.getElementById("index_signUp").style.visibility = "hidden";
+      document.getElementById("btn_logout").style.visibility = "visible";
+    }else{
+      // alert(data.content);
+      document.getElementById("username").value ="";
+      document.getElementById("password").value ="";
+     }
+    });
+  });
 
  $("#btn_signIn").click(function(){
  	console.log("hello world!");
@@ -94,8 +114,8 @@ $("#btn_back").click(function(){
       console.log(data.content[0]);
       if(data.code==100)
       {
-console.log(data);
-        document.getElementById("search").value =data.content[0].id;
+        console.log(data);
+        document.getElementById("search").value =data.content[0].intro;
       }
       else{
         alert("查询失败！\n无此商品！");
