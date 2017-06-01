@@ -248,7 +248,8 @@ header h2{
 
 .item img{
 	display:block;
-	width:100%;
+	width:180px;
+	height: 135px;
 	-webkit-box-shadow: 0 2px 1px #c3c3c3;
     -moz-box-shadow: 0 2px 1px #c3c3c3;
     box-shadow: 0 2px 1px #c3c3c3;
