@@ -13,23 +13,13 @@ class GetCommodityById(BaseHandler):
         }
         commodityid=self.get_argument("id")
         try:
-            # IPython.embed()
-            # items=self.db.query(Commodity).filter(Commodity.name==item_name).all()
-            # IPython.embed()
-            arrcommodityid = []
-            arrcommodityname = []
-            arrcommoditysort = []
-            arrcommodityintro = []
             allresult = []
             for item in self.db.query(Commodity).filter(Commodity.id == commodityid):
                 ret_code['code']=100
                 result = {
                 }
-
                 piclink = []
-
                 result['id']=str(item.id)
-
                 result['name'] = item.name
                 result['sort']=str(item.sort)
                 result['intro' ]= item.introduce
@@ -53,16 +43,7 @@ class GetCommodityById(BaseHandler):
                     piclink.append(item.piclink9)
                 result['piclinks']=piclink
                 allresult.append(result)
-                # arrcommodityid.append(item.id)
-                # arrcommodityname.append(item.id)
             ret_code['content'] = allresult
-            # ret_code={
-            #     'content':arrcommodityid
-            # arrcommodityname,
-            # arrcommoditysort,
-            # arrcommodityintro
-
-            # }
         except:
             ret_code['code'] = 204
             ret_code['content'] = u'系统错误，请稍后再试'

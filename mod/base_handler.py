@@ -24,8 +24,6 @@ class BaseHandler(tornado.web.RequestHandler):
         self.db.close()
 
     def write_back(self, retjson):
-
-        #self.set_secure_cookie("keyfdsal", 'fdsafasd')
         self.set_header("Content-Type", "application/json; charset=UTF-8")
         self.write(json.dumps(retjson, ensure_ascii=False, indent=2))
         self.finish()
@@ -35,8 +33,6 @@ class BaseHandler(tornado.web.RequestHandler):
         ret_code = {
             'code': 000, 'content': '没有此用户的登陆数据'
         }
-        #return  key
-
         if key:
             key = bytes.decode(key)
             if key in cache.keys():
@@ -45,7 +41,5 @@ class BaseHandler(tornado.web.RequestHandler):
                 return cache[key]
             if key not in cache.keys():
                 self.write_back(ret_code)
-            #else:
-             #   return None
         else:
             return None

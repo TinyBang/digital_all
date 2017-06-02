@@ -8,7 +8,6 @@ class GetUserInfo(BaseHandler):
     def post(self):
         user_name = self.get_argument('username')
         try:
-            #IPython.embed()
             user=self.db.query(User).filter(User.username==user_name).one()
             ret_code={
                 'userid':user.id,

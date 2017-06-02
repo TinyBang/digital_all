@@ -1,7 +1,5 @@
 from mod.base_handler import BaseHandler
 from databases.tables import Commodity
-from sqlalchemy.orm.exc import NoResultFound
-import IPython
 class AddCommodityHandler(BaseHandler):
     def post(self):
         ret_code = {
